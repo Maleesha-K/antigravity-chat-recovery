@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌌 Antigravity Chat Recovery Toolkit
+#  Antigravity Chat Recovery Toolkit
 
 **A zero-dependency recovery and indexing utility for Google Antigravity IDE.**  
 Restore missing, dropped, or desynced past conversations in your sidebar across Windows, macOS, Linux, and WSL.
@@ -22,7 +22,7 @@ Restore missing, dropped, or desynced past conversations in your sidebar across 
 
 ---
 
-## 🔍 Why Past Conversations Disappear
+##  Why Past Conversations Disappear
 
 In Antigravity IDE, your chat history is managed using a **two-tier architecture**:
 
@@ -55,18 +55,18 @@ flowchart TD
 
 ---
 
-## ✨ Features
+##  Features
 
-- ⚡ **Zero External Dependencies:** Built 100% on Python standard library (`sqlite3`, `struct`, `os`, `sys`). No `pip install` required.
-- 🛡️ **Safe & Non-Destructive:** Automatically creates a timestamped snapshot backup of `state.vscdb` before writing any data.
-- 🔄 **One-Command Rollback:** Instantly restore previous state with `--rollback`.
-- 🛑 **Active Process Guard:** Detects if Antigravity is running to prevent SQLite write locks or in-memory overwrites upon application exit.
-- 🎯 **Preserves Workspace Bindings:** Automatically extracts workspace URIs (`file:///...`) from conversation blobs so chats reappear in the exact matching project sidebars.
-- 🖥️ **Cross-Platform:** Works seamlessly on Windows, macOS, Linux, and WSL.
+-  **Zero External Dependencies:** Built 100% on Python standard library (`sqlite3`, `struct`, `os`, `sys`). No `pip install` required.
+-  **Safe & Non-Destructive:** Automatically creates a timestamped snapshot backup of `state.vscdb` before writing any data.
+-  **One-Command Rollback:** Instantly restore previous state with `--rollback`.
+-  **Active Process Guard:** Detects if Antigravity is running to prevent SQLite write locks or in-memory overwrites upon application exit.
+-  **Preserves Workspace Bindings:** Automatically extracts workspace URIs (`file:///...`) from conversation blobs so chats reappear in the exact matching project sidebars.
+-  **Cross-Platform:** Works seamlessly on Windows, macOS, Linux, and WSL.
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 Make sure **Antigravity IDE is completely closed** (`File` → `Exit`) before running the tool.
@@ -113,7 +113,7 @@ python -m antigravity_restore.cli --rollback
 
 ---
 
-## 🧪 Running Tests
+##  Running Tests
 
 The test suite requires zero third-party testing packages:
 
@@ -123,7 +123,7 @@ python -m unittest discover -s tests
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions, feedback, and issue reports are warmly welcomed! Please read [`CONTRIBUTING.md`](CONTRIBUTING.md) to get started.
 
