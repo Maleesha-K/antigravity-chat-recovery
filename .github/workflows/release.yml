@@ -1,0 +1,40 @@
+name: Build & Release Binaries
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        include:
+          - os: windows-latest
+            asset_name: antigravity-restore-windows.exe
+            entry: src/antigravity_restore/cli.py
+          - os: ubuntu-latest
+            asset_name: antigravity-restore-linux
+            entry: src/antigravity_restore/cli.py
+          - os: macos-latest
+            asset_name: antigravity-restore-macos
+            entry: src/antigravity_restore/cli.py
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+    - name: Install PyInstaller
+      run: pip install pyinstaller
+    - name: Build Executable
+      run: |
+        pyinstaller --onefile --name ${{ matrix.asset_name }} ${{ matrix.entry }}
+    - name: Upload Release Asset
+      uses: softprops/action-gh-release@v2
+      with:
+        files: dist/*
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

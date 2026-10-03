@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "antigravity-chat-recovery"
+version = "1.0.0"
+authors = [
+    { name = "Maleesha", email = "maleeshakumarasinghee@gmail.com" }
+]
+description = "A zero-dependency recovery and indexing toolkit for missing past conversations in Google Antigravity IDE."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+keywords = ["antigravity", "antigravity-ide", "google-gemini", "chat-recovery", "sqlite", "protobuf"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Utilities",
+]
+
+[project.scripts]
+antigravity-restore = "antigravity_restore.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
